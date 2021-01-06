@@ -1,4 +1,4 @@
-import Worker from "../../../../src/domain/workers/Worker";
+import Worker from "../../../../src/domain/worker/Worker";
 const worker = new Worker();
 
 describe("Workers tests", () => {

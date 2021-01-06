@@ -6,10 +6,18 @@ class Position
     protected y: number;
     protected _move: Move;
 
-    constructor(x: number, y: number) {
+    constructor(x: number, y: number, move: Move) {
         this.x = x;
         this.y = y;
+        this._move = move;
     }
+
+    movements = {
+        bottom: () => this.toBottom(),
+        top: () => this.toTop(),
+        left: () => this.toLeft(),
+        right: () => this.toRight(),
+    };
 
     position(): PositionAttrs {
         return {
@@ -18,22 +26,22 @@ class Position
         };
     }
 
-    protected toBottom(): MoveAttrs {
+    private toBottom(): MoveAttrs {
         this.y++;
         return this._move.move();
     }
 
-    protected toTop(): MoveAttrs {
+    private toTop(): MoveAttrs {
         this.y--;
         return this._move.move();
     }
 
-    protected toLeft(): MoveAttrs {
+    private toLeft(): MoveAttrs {
         this.x--;
         return this._move.move();
     }
 
-    protected toRight(): MoveAttrs {
+    private toRight(): MoveAttrs {
         this.x++;
         return this._move.move();
     }
