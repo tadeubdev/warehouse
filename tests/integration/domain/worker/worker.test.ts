@@ -1,10 +1,16 @@
-import Worker from "../../../../src/domain/worker/Worker";
-const worker = new Worker();
+import {WorkerAutoCreated} from "../../../../src/domain/worker/implements/WorkerAutoCreated";
+import { IWorker } from "../../../../src/domain/worker/IWorker";
+
+let worker: IWorker;
 
 describe("Workers tests", () => {
 
+    beforeAll(() => {
+        worker = new WorkerAutoCreated();
+    })
+
     it('can create an worker', function () {
-        expect(worker).toBeInstanceOf(Worker);
+        expect(worker).toBeInstanceOf(WorkerAutoCreated);
     });
 
     it('should move one step to bottom', function () {
@@ -30,6 +36,12 @@ describe("Workers tests", () => {
     it('should pass movement to move method', function () {
         worker.move("right");
         expect(worker.position().x).toBe(1);
+    });
+
+    it('should retrieve size', function () {
+        const size = worker.size();
+        expect(size.width).toBe(100);
+        expect(size.height).toBe(100);
     });
 
 });
