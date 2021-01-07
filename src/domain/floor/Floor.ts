@@ -1,4 +1,4 @@
-import Dimension, {DimensionAttrs} from "./Dimension";
+import {Dimension, DimensionAttrs} from "./Dimension";
 
 class Floor
 {
@@ -13,4 +13,4 @@ class Floor
     }
 }
 
-export default Floor;
+export {Floor};

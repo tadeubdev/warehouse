@@ -30,10 +30,10 @@ class Dimension
     }
 }
 
-export interface DimensionAttrs
+interface DimensionAttrs
 {
     width: number;
     height: number;
 };
 
-export default Dimension;
+export {Dimension, DimensionAttrs};
