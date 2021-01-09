@@ -9,7 +9,7 @@ const size: Size = new Size(sizeAttrs);
 const positionAttrs: PositionAttrs = {top: 0, left: 0};
 const position = new Position(positionAttrs, dimension);
 
-const motor = new EverBottomMotor(dimension, position, size);
+const motor = new GetFooterMotor(dimension, position, size);
 motor.start();
 
 console.log(motor.topPosition()); // prints: 90
