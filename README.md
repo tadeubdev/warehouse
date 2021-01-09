@@ -3,13 +3,17 @@
 For now, you can create some worker.
 
 ```ts
-const position: PositionAttrs = { x: 0, y: 0 };
-const size: SizeAttrs = { width: 100, height: 100 };
+const dimension = new SquareDimension(100, 100);
+const sizeAttrs: SizeAttrs = {width: 10, height: 10};
+const size: Size = new Size(sizeAttrs);
+const positionAttrs: PositionAttrs = {top: 0, left: 0};
+const position = new Position(positionAttrs, dimension);
 
-const worker = new Worker(position, size);
-worker.move().left();
-worker.move().bottom();
-worker.move().bottom();
+motor = new EverBottomMotor(dimension, position, size);
 
-console.log(worker.position()); // prints: { x: 1, y: 2 }
+while (motor.canMoveBottom()) {
+    motor.move();
+}
+
+console.log(motor.topPosition()); // prints: 90
 ```
