@@ -1,11 +1,12 @@
-import {Dimension, DimensionAttrs} from "./Dimension";
+import {SquareDimension} from "./implements/SquareDimension";
+import {DimensionAttrs} from "./DimensionBase";
 
 class Floor
 {
-    private readonly _dimension: Dimension;
+    private readonly _dimension: SquareDimension;
 
     constructor(width: number, height: number) {
-        this._dimension = new Dimension(width, height);
+        this._dimension = new SquareDimension(width, height);
     }
 
     dimension(): DimensionAttrs {

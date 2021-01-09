@@ -1,6 +1,6 @@
-import {Position, PositionAttrs} from "../../../../src/domain/worker/implements/Position";
+import {Position, PositionAttrs} from "../../../../src/domain/worker/Position";
 
-const attrs: PositionAttrs = { x: 0, y: 0};
+const attrs: PositionAttrs = { top: 0, left: 0};
 let position: Position;
 
 describe('Position creation', function () {
@@ -13,8 +13,8 @@ describe('Position creation', function () {
     it('should retrieve positions correctly', function () {
         const positions = position.position();
 
-        expect(positions.x).toBe(0);
-        expect(positions.y).toBe(0);
+        expect(positions.top).toBe(0);
+        expect(positions.left).toBe(0);
     });
 
 });

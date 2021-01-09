@@ -1,26 +1,23 @@
-import {Move} from "./Move";
-import {PositionAttrs, PositionMovementAttrs} from "./Position";
-import {SizeAttrs} from "./Size";
+import {Mover} from "../Mover";
+import {Position} from "../Position";
+import {Size} from "../Size";
 import {IWorker} from "../IWorker";
+import MotorBase from "../../motor/MotorBase";
 
 class Worker implements IWorker
 {
-    protected _move: Move;
+    private readonly _mover: Mover;
+    private readonly _position?: Position;
+    private readonly _size?: Size;
 
-    constructor(position: PositionAttrs, size: SizeAttrs) {
-        this._move = new Move(position, size);
+    constructor(motor?: MotorBase, position?: Position, size?: Size) {
+        this._mover = new Mover(motor);
+        this._position = position;
+        this._size = size;
     }
 
-    move(direction?: string): PositionMovementAttrs {
-        return this._move.move(direction);
-    }
-
-    size(): SizeAttrs {
-        return this._move.size();
-    }
-
-    position(): PositionAttrs {
-        return this._move.position();
+    move(): void {
+        this._mover.move(this._position, this._size);
     }
 }
 
