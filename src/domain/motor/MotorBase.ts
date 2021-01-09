@@ -1,4 +1,4 @@
-import {Position, PositionAttrs, PositionCanMoveAttrs} from "../worker/Position";
+import {Position} from "../worker/Position";
 import {MotorEvent} from "../Event/implements/MotorEvent";
 import {IEvent} from "../Event/IEvent";
 import {TimestampId} from "../../infra/generate-id/implements/TimestampId";
@@ -57,7 +57,7 @@ abstract class MotorBase
         return this._position.position().left;
     }
 
-    abstract move(): void;
+    abstract start(): void;
 }
 
 export {MotorBase};

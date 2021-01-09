@@ -10,10 +10,7 @@ const positionAttrs: PositionAttrs = {top: 0, left: 0};
 const position = new Position(positionAttrs, dimension);
 
 const motor = new EverBottomMotor(dimension, position, size);
-
-while (motor.canMoveBottom()) {
-    motor.move();
-}
+motor.start();
 
 console.log(motor.topPosition()); // prints: 90
 ```
