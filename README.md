@@ -1,6 +1,6 @@
 # warehouse
 
-For now, you can create some worker.
+For now, you can create some motor.
 
 ```ts
 const dimension = new SquareDimension(100, 100);
