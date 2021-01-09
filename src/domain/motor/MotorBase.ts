@@ -49,8 +49,12 @@ abstract class MotorBase
         this._id = handler.getId();
     }
 
-    position(): PositionAttrs {
-        return this._position.position();
+    topPosition(): number {
+        return this._position.position().top;
+    }
+
+    leftPosition(): number {
+        return this._position.position().left;
     }
 
     abstract move(): void;
