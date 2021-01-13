@@ -1,33 +1,29 @@
 import {Position, PositionAttrs} from "../../../../src/domain/worker/Position";
-import {Mover} from "../../../../src/domain/worker/Mover";
-import {SizeAttrs} from "../../../../src/domain/worker/Size";
+import {Size, SizeAttrs} from "../../../../src/domain/worker/Size";
+import {DimensionAttrs, DimensionBase} from "../../../../src/domain/floor/DimensionBase";
+import {SquareDimension} from "../../../../src/domain/floor/implements/SquareDimension";
 
 const positionAttrs: PositionAttrs = { top: 0, left: 0};
-const sizeAttrs: SizeAttrs = { width: 100, height: 100 };
-let position: Position;
+const dimensionAttrs: DimensionAttrs = {width: 100, height: 100};
+const squareDimension: DimensionBase = new SquareDimension(dimensionAttrs);
 
-const mover = new Mover(positionAttrs, sizeAttrs);
+const sizeAttrs: SizeAttrs = {width: 10, height: 10};
+const size: Size = new Size(sizeAttrs);
+
+let position: Position;
 
 describe('Position creation', function () {
 
     it('should create a valid position', function () {
-        position = new Position(positionAttrs);
+        position = new Position(positionAttrs, squareDimension);
         expect(position).toBeInstanceOf(Position);
     });
 
-    it('should retriever an error before set a mover', function () {
-        try {
-            position.movements("top");
-        } catch (e) {
-            expect(e.message).toBe("The attr mover was not instantiated yet.");
-        }
-    });
-
     it('should set a mover correctly', function () {
-        position.setMover(mover).movements("bottom");
+        position.right(size.width);
 
         const positions = position.position();
-        expect(positions.left).toBe(1);
+        expect(positions.left).toBe(10);
     });
 
 });

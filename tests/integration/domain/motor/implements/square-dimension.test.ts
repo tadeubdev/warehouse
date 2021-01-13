@@ -16,7 +16,10 @@ describe('Test SquareDimension motor', function () {
         const position = new Position(positionAttrs, dimension);
 
         motor = new GetFooterMotor(dimension, position, size);
-        motor.start();
+
+        while (motor.canMoveBottom()) {
+            motor.move();
+        }
 
         expect(motor.topPosition()).toBe(90);
     });
