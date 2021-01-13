@@ -12,7 +12,10 @@ const dimension: DimensionBase = new SquareDimension(dimensionAttrs);
 const position: Position = new Position(positionAttrs, dimension);
 
 const motor = new GetFooterMotor(position, size);
-motor.start();
+
+while (motor.canMoveBottom()) {
+    motor.move();
+}
 
 console.log(motor.topPosition()); // prints: 90
 ```
