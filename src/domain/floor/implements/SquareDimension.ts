@@ -2,10 +2,10 @@ import {DimensionAttrs, DimensionBase} from "../DimensionBase";
 
 class SquareDimension extends DimensionBase
 {
-    constructor(width: number, height: number) {
+    constructor(dimension: DimensionAttrs) {
         super();
-        this.setWidth(width);
-        this.setHeight(height);
+        this.setWidth(dimension.width);
+        this.setHeight(dimension.height);
     }
 }
 

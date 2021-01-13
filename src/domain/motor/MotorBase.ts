@@ -1,10 +1,10 @@
-import {Position} from "../worker/Position";
+import {Position, PositionAttrs} from "../worker/Position";
 import {MotorEvent} from "../Event/implements/MotorEvent";
 import {IEvent} from "../Event/IEvent";
 import {TimestampId} from "../../infra/generate-id/implements/TimestampId";
 import {IGenerateId} from "../../infra/generate-id/IGenerateId";
 import {DimensionBase} from "../floor/DimensionBase";
-import {Size} from "../worker/Size";
+import {Size, SizeAttrs} from "../worker/Size";
 
 abstract class MotorBase
 {
@@ -27,6 +27,14 @@ abstract class MotorBase
 
     id(): string {
         return this._id;
+    }
+
+    position(): PositionAttrs {
+        return this._position.position();
+    }
+
+    size(): SizeAttrs {
+        return this._size.size();
     }
 
     canMoveTop(): boolean {
@@ -57,7 +65,7 @@ abstract class MotorBase
         return this._position.position().left;
     }
 
-    abstract start(): void;
+    abstract move(): void;
 }
 
 export {MotorBase};

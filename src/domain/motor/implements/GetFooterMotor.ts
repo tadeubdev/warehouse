@@ -9,10 +9,8 @@ class GetFooterMotor extends MotorBase
         super(dimension, position, size);
     }
 
-    start(): void {
-        while (this.canMoveBottom()) {
-            this._position.bottom(this._size.height);
-        }
+    move(): void {
+        this._position.bottom(this._size.height);
     }
 }
 
