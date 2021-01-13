@@ -9,7 +9,7 @@ let motor: MotorBase;
 
 describe('Test SquareDimension motor', function () {
 
-    it('should move the motor for bottom', function () {
+    beforeAll(() => {
         const sizeAttrs: SizeAttrs = {width: 10, height: 10};
         const size: Size = new Size(sizeAttrs);
 
@@ -19,11 +19,16 @@ describe('Test SquareDimension motor', function () {
         const position = new Position(positionAttrs, dimension);
 
         motor = new GetFooterMotor(position, size);
+    });
 
+    it('should retrieve the motor id', function () {
+        expect(motor.id()).not.toBeNull();
+    });
+
+    it('should move the motor for bottom', function () {
         while (motor.canMoveBottom()) {
             motor.move();
         }
-
         expect(motor.topPosition()).toBe(90);
     });
 

@@ -1,9 +1,9 @@
 import {Position, PositionAttrs} from "../worker/Position";
 import {MotorEvent} from "../Event/implements/MotorEvent";
 import {IEvent} from "../Event/IEvent";
-import {TimestampId} from "../../infra/generateId/implements/TimestampId";
 import {IGenerateId} from "../../infra/generateId/IGenerateId";
 import {Size, SizeAttrs} from "../worker/Size";
+import {Uuid} from "../../infra/generateId/implements/Uuid";
 
 abstract class MotorBase
 {
@@ -13,7 +13,7 @@ abstract class MotorBase
     protected _size: Size;
 
     protected constructor(position: Position, size: Size) {
-        const generateIdHandler = new TimestampId();
+        const generateIdHandler = new Uuid();
         this.generateId(generateIdHandler);
 
         this._position = position;
