@@ -10,15 +10,13 @@ abstract class MotorBase
 {
     private _event: IEvent;
     private _id: string;
-    protected _dimension: DimensionBase;
     protected _position: Position;
     protected _size: Size;
 
-    protected constructor(dimension: DimensionBase, position: Position, size: Size) {
+    protected constructor(position: Position, size: Size) {
         const generateIdHandler = new TimestampId();
         this.generateId(generateIdHandler);
 
-        this._dimension = dimension;
         this._position = position;
         this._size = size;
 

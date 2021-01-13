@@ -10,13 +10,16 @@ let worker: Worker;
 describe("Workers tests", () => {
 
     beforeAll(() => {
-        const dimensionAttrs: DimensionAttrs = {width: 100, height: 100};
-        const dimension: DimensionBase = new SquareDimension(dimensionAttrs);
-        const positionAttrs: PositionAttrs = {top: 0, left: 0};
-        const position: Position = new Position(positionAttrs, dimension);
         const sizeAttrs: SizeAttrs = {width: 10, height: 10};
         const size: Size = new Size(sizeAttrs);
-        const motor = new GetFooterMotor(dimension, position, size);
+
+        const positionAttrs: PositionAttrs = {top: 0, left: 0};
+        const dimensionAttrs: DimensionAttrs = {width: 100, height: 100};
+        const dimension: DimensionBase = new SquareDimension(dimensionAttrs);
+        const position: Position = new Position(positionAttrs, dimension);
+
+        const motor = new GetFooterMotor(position, size);
+
         worker = new Worker(motor);
     })
 

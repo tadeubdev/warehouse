@@ -1,12 +1,11 @@
 import {Position} from "../../worker/Position";
 import {Size} from "../../worker/Size";
-import {DimensionBase} from "../../floor/DimensionBase";
 import {MotorBase} from "../MotorBase";
 
 class GetFooterMotor extends MotorBase
 {
-    constructor(dimension: DimensionBase, position: Position, size: Size) {
-        super(dimension, position, size);
+    constructor(position: Position, size: Size) {
+        super(position, size);
     }
 
     move(): void {
