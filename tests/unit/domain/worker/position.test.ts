@@ -1,12 +1,26 @@
 import {Position, PositionAttrs} from "../../../../src/domain/worker/Position";
+import {DimensionBase} from "../../../../src/domain/floor/DimensionBase";
 
-const attrs: PositionAttrs = { top: 0, left: 0};
+
+const makeDimension = (): DimensionBase => {
+    class DimensionFake extends DimensionBase {
+        constructor() {
+            super();
+            this.setWidth(100);
+            this.setHeight(100);
+        }
+    }
+    return new DimensionFake()
+}
+
+const squareDimension: DimensionBase = makeDimension()
+const positionAttrs: PositionAttrs = { top: 0, left: 0};
 let position: Position;
 
 describe('Position creation', function () {
 
     it('should create a valid position', function () {
-        position = new Position(attrs);
+        position = new Position(positionAttrs, squareDimension);
         expect(position).toBeInstanceOf(Position);
     });
 
