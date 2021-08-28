@@ -1,7 +1,7 @@
 import {Mover} from "./Mover";
-import {MotorBase} from "../motor/MotorBase";
-import {PositionAttrs} from "./Position";
-import {SizeAttrs} from "./Size";
+import {MotorBase} from "../motor/motor-base";
+import {PositionAttrs} from "./position";
+import {SizeAttrs} from "./size";
 
 class Worker
 {

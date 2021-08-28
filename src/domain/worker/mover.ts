@@ -1,4 +1,4 @@
-import {MotorBase} from "../motor/MotorBase";
+import {MotorBase} from "../motor/motor-base";
 
 class Mover
 {

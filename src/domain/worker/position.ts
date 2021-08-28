@@ -1,4 +1,4 @@
-import {DimensionBase} from "../floor/DimensionBase";
+import {DimensionBase} from "../floor/dimension-base";
 
 class Position {
     private readonly _canMove: PositionCanMoveAttrs;

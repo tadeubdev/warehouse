@@ -1,5 +1,5 @@
-import {SquareDimension} from "./implements/SquareDimension";
-import {DimensionAttrs, DimensionBase} from "./DimensionBase";
+import {SquareDimension} from "./implements/square-dimension";
+import {DimensionAttrs, DimensionBase} from "./dimension-base";
 
 class Floor
 {

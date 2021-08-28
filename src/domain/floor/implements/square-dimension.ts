@@ -1,4 +1,4 @@
-import {DimensionAttrs, DimensionBase} from "../DimensionBase";
+import {DimensionAttrs, DimensionBase} from "../dimension-base";
 
 class SquareDimension extends DimensionBase
 {

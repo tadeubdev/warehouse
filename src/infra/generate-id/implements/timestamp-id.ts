@@ -1,4 +1,4 @@
-import {IGenerateId} from "../IGenerateId";
+import {IGenerateId} from "../igenerate-id";
 
 class TimestampId implements IGenerateId
 {

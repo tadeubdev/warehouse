@@ -1,4 +1,4 @@
-import {EventPayload, IEvent} from "./IEvent";
+import {EventPayload, IEvent} from "./ievent";
 
 class Event
 {

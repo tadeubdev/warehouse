@@ -1,8 +1,8 @@
-import {MotorBase} from "../../domain/motor/MotorBase";
-import {Size, SizeAttrs} from "../../domain/worker/Size";
-import {Position, PositionAttrs} from "../../domain/worker/Position";
-import {DimensionAttrs, DimensionBase} from "../../domain/floor/DimensionBase";
-import {SquareDimension} from "../../domain/floor/implements/SquareDimension";
+import {MotorBase} from "../../domain/motor/motor-base";
+import {Size, SizeAttrs} from "../../domain/worker/size";
+import {Position, PositionAttrs} from "../../domain/worker/position";
+import {DimensionAttrs, DimensionBase} from "../../domain/floor/dimension-base";
+import {SquareDimension} from "../../domain/floor/implements/square-dimension";
 import {makeGenerateId} from "./generate-fake-id";
 
 export const makeMotor = (): MotorBase => {

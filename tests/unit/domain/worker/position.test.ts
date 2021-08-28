@@ -1,5 +1,5 @@
-import {Position, PositionAttrs} from "../../../../src/domain/worker/Position";
-import {DimensionBase} from "../../../../src/domain/floor/DimensionBase";
+import {Position, PositionAttrs} from "../../../../src/domain/worker/position";
+import {DimensionBase} from "../../../../src/domain/floor/dimension-base";
 
 
 const makeDimension = (): DimensionBase => {

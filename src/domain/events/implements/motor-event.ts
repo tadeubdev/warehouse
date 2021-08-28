@@ -1,5 +1,5 @@
-import {EventPayload, IEvent} from "../IEvent";
-import {MotorBase} from "../../motor/MotorBase";
+import {EventPayload, IEvent} from "../ievent";
+import {MotorBase} from "../../motor/motor-base";
 
 class MotorEvent implements IEvent
 {

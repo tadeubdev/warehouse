@@ -1,4 +1,4 @@
-import {IGenerateId} from "../IGenerateId";
+import {IGenerateId} from "../igenerate-id";
 import { v4 as uuidv4 } from "uuid";
 
 class Uuid implements IGenerateId

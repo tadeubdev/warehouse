@@ -1,7 +1,7 @@
-import {Position, PositionAttrs} from "../../../../src/domain/worker/Position";
-import {Size, SizeAttrs} from "../../../../src/domain/worker/Size";
-import {DimensionAttrs, DimensionBase} from "../../../../src/domain/floor/DimensionBase";
-import {SquareDimension} from "../../../../src/domain/floor/implements/SquareDimension";
+import {Position, PositionAttrs} from "../../../../src/domain/worker/position";
+import {Size, SizeAttrs} from "../../../../src/domain/worker/size";
+import {DimensionAttrs, DimensionBase} from "../../../../src/domain/floor/dimension-base";
+import {SquareDimension} from "../../../../src/domain/floor/implements/square-dimension";
 
 const positionAttrs: PositionAttrs = { top: 0, left: 0};
 const dimensionAttrs: DimensionAttrs = {width: 100, height: 100};

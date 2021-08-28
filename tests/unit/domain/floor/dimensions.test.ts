@@ -1,5 +1,5 @@
-import {SquareDimension} from "../../../../src/domain/floor/implements/SquareDimension";
-import {DimensionAttrs, DimensionBase} from "../../../../src/domain/floor/DimensionBase";
+import {SquareDimension} from "../../../../src/domain/floor/implements/square-dimension";
+import {DimensionAttrs, DimensionBase} from "../../../../src/domain/floor/dimension-base";
 
 describe("Dimension creation", () => {
 

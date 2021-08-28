@@ -1,8 +1,8 @@
-import {Position, PositionAttrs} from "../worker/Position";
-import {MotorEvent} from "../Event/implements/MotorEvent";
-import {IEvent} from "../Event/IEvent";
-import {IGenerateId} from "../../infra/generateId/IGenerateId";
-import {Size, SizeAttrs} from "../worker/Size";
+import {Position, PositionAttrs} from "../worker/position";
+import {MotorEvent} from "../events/implements/motor-event";
+import {IEvent} from "../events/ievent";
+import {IGenerateId} from "../../infra/generate-id/igenerate-id";
+import {Size, SizeAttrs} from "../worker/size";
 
 abstract class MotorBase
 {

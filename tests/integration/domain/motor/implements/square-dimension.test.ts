@@ -1,4 +1,4 @@
-import {MotorBase} from "../../../../../src/domain/motor/MotorBase";
+import {MotorBase} from "../../../../../src/domain/motor/motor-base";
 import {makeMotor} from "../../../../../src/helper/motor/motor-fake";
 
 const motor: MotorBase = makeMotor()

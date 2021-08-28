@@ -1,5 +1,5 @@
-import {Worker} from "../../../../src/domain/worker/Worker";
-import {makeWorker} from "../../../../src/helper/worker/workerFake";
+import {Worker} from "../../../../src/domain/worker/worker";
+import {makeWorker} from "../../../../src/helper/worker/worker-fake";
 
 const worker: Worker = makeWorker();
 

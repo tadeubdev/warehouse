@@ -1,6 +1,6 @@
-import {Floor} from "../../../../src/domain/floor/Floor";
-import {DimensionAttrs} from "../../../../src/domain/floor/DimensionBase";
-import {SquareDimension} from "../../../../src/domain/floor/implements/SquareDimension";
+import {Floor} from "../../../../src/domain/floor/floor";
+import {DimensionAttrs} from "../../../../src/domain/floor/dimension-base";
+import {SquareDimension} from "../../../../src/domain/floor/implements/square-dimension";
 
 describe("Floor creation", () => {
 

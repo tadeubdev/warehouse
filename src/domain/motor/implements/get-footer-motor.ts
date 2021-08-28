@@ -1,6 +1,6 @@
-import {Position} from "../../worker/Position";
-import {Size} from "../../worker/Size";
-import {MotorBase} from "../MotorBase";
+import {Position} from "../../worker/position";
+import {Size} from "../../worker/size";
+import {MotorBase} from "../motor-base";
 
 class GetFooterMotor extends MotorBase
 {
