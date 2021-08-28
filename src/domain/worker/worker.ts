@@ -1,4 +1,4 @@
-import {Mover} from "./Mover";
+import {Mover} from "./mover";
 import {MotorBase} from "../motor/motor-base";
 import {PositionAttrs} from "./position";
 import {SizeAttrs} from "./size";
