@@ -2,7 +2,7 @@ var Size = require("../dist/src/domain/worker/size").Size;
 var SquareDimension = require("../dist/src/domain/floor/implements/square-dimension").SquareDimension;
 var Position = require("../dist/src/domain/worker/position").Position;
 var TimestampId = require("../dist/src/infra/generate-id/implements/timestamp-id").TimestampId;
-var MoveArroundOnceMotor = require("../dist/src/domain/motor/implements/").MoveArroundOnceMotor;
+var MoveArroundOnceMotor = require("../dist/src/domain/motor/implements/move-arround-once-motor").MoveArroundOnceMotor;
 
 var sizeAttrs = {width: 10, height: 10};
 var size = new Size(sizeAttrs);
@@ -15,8 +15,9 @@ var generateId = new TimestampId();
 
 var motor = new MoveArroundOnceMotor(position, size, generateId);
 
-while (motor.canMoveBottom()) {
+while (motor.canMove()) {
     motor.move();
 }
 
-console.log(motor.topPosition()); // prints: 90
+console.log('left: ', motor.leftPosition());
+console.log('top: ', motor.topPosition());
