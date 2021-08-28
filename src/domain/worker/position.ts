@@ -35,20 +35,22 @@ class Position {
 
     top(size: number) {
         this._top -= size;
-        this.generateCanMove(size);
+        this.generateCanMoveVertically(size);
     }
 
     bottom(size: number) {
         this._top += size;
-        this.generateCanMove(size);
+        this.generateCanMoveVertically(size);
     }
 
     left(size: number) {
         this._left -= size;
+        this.generateCanMoveHorizontally(size);
     }
 
     right(size: number) {
         this._left += size;
+        this.generateCanMoveHorizontally(size);
     }
 
     canMoveTop(): boolean {
@@ -67,8 +69,14 @@ class Position {
         return this._canMove.right;
     }
 
-    private generateCanMove(height: number) {
-        this._canMove.bottom = this._dimension.height() > this._top + height;
+    private generateCanMoveHorizontally(width: number) {
+        this._canMove.left = this._left >= width;
+        this._canMove.right = this._left + width < this._dimension.width();
+    }
+
+    private generateCanMoveVertically(height: number) {
+        this._canMove.top = this._top >= height;
+        this._canMove.bottom = this._top + height < this._dimension.height();
     }
 }
 
