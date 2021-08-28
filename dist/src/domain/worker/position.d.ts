@@ -6,12 +6,18 @@ declare class Position {
     private _dimension;
     constructor(position: PositionAttrs, dimension: DimensionBase);
     position(): PositionAttrs;
+    positionTop(): number;
+    positionLeft(): number;
     top(size: number): void;
     bottom(size: number): void;
     left(size: number): void;
     right(size: number): void;
-    canMove(): PositionCanMoveAttrs;
-    private generateCanMove;
+    canMoveTop(): boolean;
+    canMoveBottom(): boolean;
+    canMoveLeft(): boolean;
+    canMoveRight(): boolean;
+    private generateCanMoveHorizontally;
+    private generateCanMoveVertically;
 }
 interface PositionAttrs {
     top: number;

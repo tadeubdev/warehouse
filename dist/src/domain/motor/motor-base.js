@@ -19,25 +19,25 @@ class MotorBase {
         return this._size.size();
     }
     canMoveTop() {
-        return this._position.canMove().top;
+        return this._position.canMoveTop();
     }
     canMoveBottom() {
-        return this._position.canMove().bottom;
+        return this._position.canMoveBottom();
     }
     canMoveLeft() {
-        return this._position.canMove().left;
+        return this._position.canMoveLeft();
     }
     canMoveRight() {
-        return this._position.canMove().right;
+        return this._position.canMoveRight();
     }
     generateId(handler) {
         this._id = handler.getId();
     }
     topPosition() {
-        return this._position.position().top;
+        return this._position.positionTop();
     }
     leftPosition() {
-        return this._position.position().left;
+        return this._position.positionLeft();
     }
 }
 exports.MotorBase = MotorBase;

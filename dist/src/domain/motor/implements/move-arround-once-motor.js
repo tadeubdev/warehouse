@@ -1,27 +1,23 @@
-import { IGenerateId } from "../../../infra/generate-id/igenerate-id";
-import {Position} from "../../worker/position";
-import {Size} from "../../worker/size";
-import {MotorBase} from "../motor-base";
-
-class MoveArroundOnceMotor extends MotorBase {
-    private moved = {
-        first: false,
-        right: false,
-        bottom: false,
-        left: false,
-        top: false,
-    };
-    private movedArround: boolean = false;
-
-    constructor(position: Position, size: Size, generateIdHandler: IGenerateId) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MoveArroundOnceMotor = void 0;
+const motor_base_1 = require("../motor-base");
+class MoveArroundOnceMotor extends motor_base_1.MotorBase {
+    constructor(position, size, generateIdHandler) {
         super(position, size, generateIdHandler);
+        this.moved = {
+            first: false,
+            right: false,
+            bottom: false,
+            left: false,
+            top: false,
+        };
+        this.movedArround = false;
     }
-
-    canMove(): boolean {
+    canMove() {
         return this.movedArround === false;
     }
-
-    move(): void {
+    move() {
         if (this.moved.first === false) {
             this._position.right(this._size.width);
             this.moved.first = true;
@@ -58,5 +54,4 @@ class MoveArroundOnceMotor extends MotorBase {
         this.movedArround = true;
     }
 }
-
-export {MoveArroundOnceMotor};
+exports.MoveArroundOnceMotor = MoveArroundOnceMotor;
