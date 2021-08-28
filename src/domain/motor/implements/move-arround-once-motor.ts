@@ -5,7 +5,6 @@ import {MotorBase} from "../motor-base";
 
 class MoveArroundOnceMotor extends MotorBase {
     private moved = {
-        first: false,
         right: false,
         bottom: false,
         left: false,
@@ -22,37 +21,24 @@ class MoveArroundOnceMotor extends MotorBase {
     }
 
     move(): void {
-        if (this.moved.first === false) {
-            this._position.right(this._size.width);
-            this.moved.first = true;
-            return;
-        }
-        if (this._position.canMoveRight() === false && this.moved.right === false) {
-            this.moved.right = true;
-        }
-        if (this._position.canMoveBottom() === false && this.moved.bottom === false) {
-            this.moved.bottom = true;
-        }
-        if (this._position.canMoveRight() === false && this.moved.right === false) {
-            this.moved.right = true;
-        }
-        if (this._position.canMoveTop() === false && this.moved.top === false) {
-            this.moved.top = true;
-        }
         if (this._position.canMoveRight() && this.moved.right === false) {
             this._position.right(this._size.width);
+            this.moved.right = this._position.canMoveRight() === false;
             return;
         }
         if (this._position.canMoveBottom() && this.moved.bottom === false) {
             this._position.bottom(this._size.height);
+            this.moved.bottom = this._position.canMoveBottom() === false;
             return;
         }
         if (this._position.canMoveLeft() && this.moved.left === false) {
             this._position.left(this._size.width);
+            this.moved.left = this._position.canMoveLeft() === false;
             return;
         }
         if (this._position.canMoveTop() && this.moved.top === false) {
             this._position.top(this._size.height);
+            this.moved.top = this._position.canMoveTop() === false;
             return;
         }
         this.movedArround = true;
