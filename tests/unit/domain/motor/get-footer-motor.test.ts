@@ -1,5 +1,4 @@
 import { DimensionAttrs, DimensionBase } from "../../../../src/domain/floor/dimension-base";
-import { Floor } from "../../../../src/domain/floor/floor";
 import { SquareDimension } from "../../../../src/domain/floor/implements/square-dimension";
 import { GetFooterMotor } from "../../../../src/domain/motor/implements/get-footer-motor";
 import { PositionAttrs, Position } from "../../../../src/domain/worker/position";
