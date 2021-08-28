@@ -53,11 +53,11 @@ abstract class MotorBase
     }
 
     topPosition(): number {
-        return this._position.position().top;
+        return this._position.positionTop();
     }
 
     leftPosition(): number {
-        return this._position.position().left;
+        return this._position.positionLeft();
     }
 
     abstract move(): void;

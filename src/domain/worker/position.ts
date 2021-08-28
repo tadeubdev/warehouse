@@ -25,6 +25,14 @@ class Position {
         };
     }
 
+    positionTop(): number {
+        return this._top;
+    }
+
+    positionLeft(): number {
+        return this._left;
+    }
+
     top(size: number) {
         this._top -= size;
         this.generateCanMove(size);

@@ -14,7 +14,7 @@ const makeDimension = (): DimensionBase => {
 }
 
 const squareDimension: DimensionBase = makeDimension()
-const positionAttrs: PositionAttrs = { top: 0, left: 0};
+const positionAttrs: PositionAttrs = { top: 0, left: 0 };
 let position: Position;
 
 describe('Position creation', function () {
@@ -25,10 +25,11 @@ describe('Position creation', function () {
     });
 
     it('should retrieve positions correctly', function () {
-        const positions = position.position();
+        const positionTop = position.positionTop();
+        const positionLeft = position.positionLeft();
 
-        expect(positions.top).toBe(0);
-        expect(positions.left).toBe(0);
+        expect(positionTop).toBe(0);
+        expect(positionLeft).toBe(0);
     });
 
 });
