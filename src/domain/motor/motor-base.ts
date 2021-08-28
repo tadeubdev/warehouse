@@ -33,19 +33,19 @@ abstract class MotorBase
     }
 
     canMoveTop(): boolean {
-        return this._position.canMove().top;
+        return this._position.canMoveTop();
     }
 
     canMoveBottom(): boolean {
-        return this._position.canMove().bottom;
+        return this._position.canMoveBottom();
     }
 
     canMoveLeft(): boolean {
-        return this._position.canMove().left;
+        return this._position.canMoveLeft();
     }
 
     canMoveRight(): boolean {
-        return this._position.canMove().right;
+        return this._position.canMoveRight();
     }
 
     private generateId(handler: IGenerateId) {

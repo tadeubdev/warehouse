@@ -43,8 +43,20 @@ class Position {
         this._left += size;
     }
 
-    canMove(): PositionCanMoveAttrs {
-        return this._canMove;
+    canMoveTop(): boolean {
+        return this._canMove.top;
+    }
+
+    canMoveBottom(): boolean {
+        return this._canMove.bottom;
+    }
+
+    canMoveLeft(): boolean {
+        return this._canMove.left;
+    }
+
+    canMoveRight(): boolean {
+        return this._canMove.right;
     }
 
     private generateCanMove(height: number) {
